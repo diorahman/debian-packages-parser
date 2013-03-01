@@ -1,7 +1,7 @@
-var Parser = require('./deb')
+var Parser = require('../index')
 var test = require('tap').test
 
-var file = __dirname + "/data/Release.dummy"
+var file = __dirname + "/data/Packages.dummy"
 
 test('make sure we have 4 packages', function(t){
 	
