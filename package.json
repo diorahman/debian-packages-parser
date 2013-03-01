@@ -1,0 +1,17 @@
+{
+	"name" : "debian-packages-parser",
+	"version" : "0.0.0",
+	"description" : "parse debian Release, Packages file",
+	"url" : "https://github.com/diorahman/debian-packages-parser",
+	"keywords" : ["debian", "release", "packages", "parser"],
+	"author" : "Dhi Aurrahman <dio@rockybars.com>",
+	"main" : "index.js",
+	"dependencies" : {
+		"pstrscan" : "0.1.4",
+		"line-reader" : "0.2.3"
+	},
+	"repository" : {
+		"type" : "git",
+		"url" : "https://diorahman@github.com/diorahman/debian-packages-parser.git"
+	}
+}
