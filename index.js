@@ -1,7 +1,16 @@
 var lineReader = require('line-reader')
 var PStrScan = require('pstrscan')
 
-module.exports = function(filename, cb){
+var events = require('events')
+var util = require('util')
+
+var Parser = function(){
+	events.EventEmitter.call(this)
+}
+util.inherits(Parser, events.EventEmitter)
+
+Parser.prototype.parse = function(filename){
+	var self = this
 
 	var p = []
 	var pack = []
@@ -44,14 +53,21 @@ module.exports = function(filename, cb){
 					pObj[k] = v
 				}
 				p = []
+
 				pack.push(pObj)
+				self.emit('data', pObj)
 			}
 		}
 
 		if(last){
-			cb(pack)
+			self.emit('end', pack)
 		}
-
 		scan = null
 	})
 }
+
+module.exports = Parser
+
+
+
+
