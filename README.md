@@ -1,5 +1,6 @@
-Brute force approach for comparing two Packages file : https://gist.github.com/diorahman/5651844
+Brute force approach for comparing two Packages file: https://gist.github.com/diorahman/5651844
 
+Snippet on using the lib:
 ```js
 var p = new Parser()
 	p.parse(file)
